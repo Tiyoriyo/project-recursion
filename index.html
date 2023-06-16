@@ -24,7 +24,58 @@
             return array;
         }
 
+        // PSEUDOCODE: 
+        // if the count = 0 return []
+
+        // If input number = 1 return [0] 
+        // else if input number = 2 return [1]
+
+        // let array = [];
+        // array.push(fibs)
+
+        
+        
+
+        function fibsRec(n) {
+            if (n === 0) return [];
+            if (n === 1) return [0];
+            if (n === 2) return fibsRec(n-1).concat([1]);
+            
+
+            let array = fibsRec(n-1);
+            let nMinusOne = fibsRec(n-1).pop();
+            let nMinusTwo = fibsRec(n-2).pop();
+            let resultFib = Number(nMinusOne) + Number(nMinusTwo);
+            array = array.concat(resultFib);
+            
+            return array;
+        }
+
+        // fibsRec(4)
+        //      let an array equal fibsRec(3)
+        //          let an array equal fibsRec(2)
+        //              return fibsRec(1).concat([1])
+        //                   0.concat([1])
+        //                      [0, 1]
+        //          let nMinusOne = fibsRec(2).pop()
+        //              1
+        //          let nMinusTwo = fibsRec(1).pop()
+        //               0
+        //          let resultFib = 1
+        //          array = [0, 1].concat(1)
+        //              [0, 1, 1]
+        //          return [0, 1, 1]
+        //      [0, 1, 1, 2]
+                        
+
+
+     
+        
+
+
+
         console.log(fibs1(8));
+        console.log(fibsRec(4))
 
     </script>
 </body>
