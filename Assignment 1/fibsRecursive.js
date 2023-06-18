@@ -15,6 +15,6 @@ function fibsRec(n) {
 }
 
 console.log(fibsRec(0))
-console.log(fibsRecn(5))
+console.log(fibsRec(5))
 console.log(fibsRec(3))
 console.log(fibsRec(10))
